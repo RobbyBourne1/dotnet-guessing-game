@@ -6,20 +6,25 @@ namespace dotnet_guessing_game
     {
         static void Main(string[] args)
         {
-            var random = new Random();
+            Random random = new Random();
             int randomNumber = random.Next(0, 100);
             Console.WriteLine(randomNumber);
             Console.WriteLine("Pick a Number From 1 - 100");
             var input = int.Parse(Console.ReadLine());
-            if (input > randomNumber)
+            while (input != randomNumber)
             {
+                if (input > randomNumber)
+                {
                 Console.WriteLine("Guess is too high!");
-            }
-            else if (input < randomNumber)
-            {
+                input = int.Parse(Console.ReadLine());
+                }
+                else if (input < randomNumber)
+                {
                 Console.WriteLine("Guess is too Low!");
-            } 
-            else if (input == randomNumber)
+                input = int.Parse(Console.ReadLine());
+                } 
+            }
+             if (input == randomNumber)
             {
                 Console.WriteLine("You Guessed Right!");
             }
