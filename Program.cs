@@ -11,9 +11,17 @@ namespace dotnet_guessing_game
             int randomNumber = random.Next(0, 100);
             Console.WriteLine(randomNumber);
             var input = Convert.ToInt32(Console.ReadLine());
-            if (input > randomNumber);
+            if (input > randomNumber)
             {
                 Console.WriteLine("Number is too high!");
+            }
+            else if (input < randomNumber)
+            {
+                Console.WriteLine("Number is too Low!");
+            } 
+            else if (input == randomNumber)
+            {
+                Console.WriteLine("You Guessed Right!");
             }
         }
     }
